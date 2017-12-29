@@ -68,22 +68,22 @@ $$(document).on('deviceready', function() {
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true,
-        isTesting:true
+        isTesting: true
     });
 
     if (AdMob) AdMob.prepareRewardVideoAd({
         adId: admobid.rewardVideoAd,
         autoShow: false,
-        isTesting:true
+        isTesting: true
     });
 
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
-      if (AdMob) AdMob.prepareInterstitial({
-          adId: admobid.interstitial,
-          autoShow: true,
-          isTesting:true
-      });
+        if (AdMob) AdMob.prepareInterstitial({
+            adId: admobid.interstitial,
+            autoShow: true,
+            isTesting: true
+        });
     });
 
 
@@ -91,32 +91,48 @@ $$(document).on('deviceready', function() {
     //navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
 
-document.addEventListener('onAdLoaded', function(e){
+document.addEventListener('onAdLoaded', function(e) {
     alert("onAdLoaded");
 });
 
-document.addEventListener('onAdFailLoad', function(e){
+document.addEventListener('onAdFailLoad', function(e) {
     alert("onAdFailLoad");
 });
 
-document.addEventListener('onAdPresent', function(e){
-  if (AdMob) AdMob.prepareRewardVideoAd({
-      adId: admobid.rewardVideoAd,
-      autoShow: false,
-      isTesting:true
-  });
+document.addEventListener('onAdPresent', function(e) {
+    if (AdMob) {
+        AdMob.prepareRewardVideoAd({
+            adId: admobid.rewardVideoAd,
+            autoShow: false,
+            isTesting: true
+        }, function() {
+            alert("ok");
+        }, function() {
+            alert("fail");
+        });
+    } else {
+        alert("onAdPresentFail");
+    }
 });
 
-document.addEventListener('onAdDismiss', function(e){
-  if (AdMob) AdMob.prepareRewardVideoAd({
-      adId: admobid.rewardVideoAd,
-      autoShow: false,
-      isTesting:true
-  });
+document.addEventListener('onAdDismiss', function(e) {
+  if (AdMob) {
+      AdMob.prepareRewardVideoAd({
+          adId: admobid.rewardVideoAd,
+          autoShow: false,
+          isTesting: true
+      }, function() {
+          alert("ok");
+      }, function() {
+          alert("fail");
+      });
+  } else {
+      alert("onAdDismissFail");
+  }
 });
 
-document.addEventListener('onAdLeaveApp', function(e){
-      alert("onAdLeaveApp");
+document.addEventListener('onAdLeaveApp', function(e) {
+    alert("onAdLeaveApp");
 });
 // Now we need to run the code that will be executed only for About page.
 
