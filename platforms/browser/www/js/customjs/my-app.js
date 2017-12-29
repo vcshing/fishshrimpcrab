@@ -72,16 +72,12 @@ $$(document).on('deviceready', function() {
         autoShow: true
     });
 
-  /*  if (AdMob) AdMob.prepareRewardVideoAd({
+    if (AdMob) AdMob.prepareRewardVideoAd({
           adId: admobid.rewardVideoAd,
-          autoShow: true
+          autoShow: false
     });
 
-    if (AdMob) AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: true
-    });
-    */
+
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
       if (AdMob) AdMob.prepareInterstitial({

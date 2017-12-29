@@ -6,13 +6,13 @@ function noMoneyAlert() {
         buttons: [{
                 text: '看廣告',
                 onClick: function() {
-                  showRewardVideoAd();
+                  AdMob.showRewardVideoAd();
                 }
             },
             {
                 text: '取消',
                 onClick: function() {
-                    
+
                 }
             }
         ]
