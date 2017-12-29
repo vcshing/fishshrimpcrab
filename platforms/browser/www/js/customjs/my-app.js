@@ -103,17 +103,17 @@ document.addEventListener('onAdDismiss', function(e) {
 
 
 document.addEventListener('onAdLoaded', function(e) {
-      console("onAdLoaded:"+e);
+      console.log("onAdLoaded:"+e);
 });
 
 document.addEventListener('onAdFailLoad', function(e) {
-    console("onAdFailLoad:"+e);
+    console.log("onAdFailLoad:"+e);
 });
 
 
 
 document.addEventListener('onAdLeaveApp', function(e) {
-    console("onAdLeaveApp:"+e);
+    console.log("onAdLeaveApp:"+e);
 });
 // Now we need to run the code that will be executed only for About page.
 

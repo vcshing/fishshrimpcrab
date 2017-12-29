@@ -69,7 +69,8 @@ $$(document).on('deviceready', function() {
     if (AdMob) AdMob.createBanner({
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
-        autoShow: true
+        autoShow: true,
+        isTesting:true
     });
 
     if (AdMob) AdMob.prepareRewardVideoAd({
@@ -80,7 +81,8 @@ $$(document).on('deviceready', function() {
 
     if (AdMob) AdMob.prepareInterstitial({
           adId: admobid.interstitial,
-          autoShow: false
+          autoShow: false,
+          isTesting:true
     });
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
@@ -103,17 +105,17 @@ document.addEventListener('onAdDismiss', function(e) {
 
 
 document.addEventListener('onAdLoaded', function(e) {
-      console("onAdLoaded:"+e);
+      console.log("onAdLoaded:"+e);
 });
 
 document.addEventListener('onAdFailLoad', function(e) {
-    console("onAdFailLoad:"+e);
+    console.log("onAdFailLoad:"+e);
 });
 
 
 
 document.addEventListener('onAdLeaveApp', function(e) {
-    console("onAdLeaveApp:"+e);
+    console.log("onAdLeaveApp:"+e);
 });
 // Now we need to run the code that will be executed only for About page.
 
