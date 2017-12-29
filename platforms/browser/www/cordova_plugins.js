@@ -151,6 +151,14 @@ module.exports = [
             "AdMob",
             "plugins.AdMob"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
+        "id": "cordova-plugin-admobpro.AdMob",
+        "pluginId": "cordova-plugin-admobpro",
+        "clobbers": [
+            "window.AdMob"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -169,7 +177,9 @@ module.exports.metadata =
     "phonegap-plugin-barcodescanner": "6.0.5",
     "cordova-promise-polyfill": "0.0.2",
     "cordova-admob-sdk": "0.13.1",
-    "cordova-plugin-admob-free": "0.13.0"
+    "cordova-plugin-admob-free": "0.13.0",
+    "cordova-plugin-extension": "1.5.3",
+    "cordova-plugin-admobpro": "2.29.29"
 }
 // BOTTOM OF METADATA
 });

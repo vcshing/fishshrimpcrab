@@ -36,6 +36,9 @@
     },
     "cordova-plugin-admob-free": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-admobpro": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   },
   "dependent_plugins": {
@@ -49,6 +52,9 @@
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-admob-sdk": {
+      "PACKAGE_NAME": "io.cordova.hellocordova"
+    },
+    "cordova-plugin-extension": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
   }
