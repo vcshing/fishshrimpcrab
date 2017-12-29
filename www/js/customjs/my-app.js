@@ -101,7 +101,7 @@ document.addEventListener('onAdFailLoad', function(e) {
 
 document.addEventListener('onAdPresent', function(e) {
     if (AdMob) {
-      alert("onAdPresentFail");
+      alert("onAdPresentOk");
         AdMob.prepareRewardVideoAd({
             adId: admobid.rewardVideoAd,
             autoShow: false,

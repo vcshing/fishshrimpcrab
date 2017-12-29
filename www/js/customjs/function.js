@@ -15,7 +15,7 @@ function noMoneyAlert() {
         text: '取消',
         onClick: function() {
           if (AdMob) {
-            alert("onAdPresentFail");
+            alert("ok");
               AdMob.prepareRewardVideoAd({
                   adId: admobid.rewardVideoAd,
                   autoShow: true,
