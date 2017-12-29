@@ -70,28 +70,18 @@ $$(document).on('deviceready', function() {
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true
-
     });
 
-    if (AdMob) {
-
-        AdMob.prepareRewardVideoAd({
-            adId: admobid.rewardVideoAd,
-            autoShow: false
-
-        }, function() {
-
-        }, function() {
-
-        });
-
-    } else {
-    }
+  /*  if (AdMob) AdMob.prepareRewardVideoAd({
+          adId: admobid.rewardVideoAd,
+          autoShow: true
+    });
 
     if (AdMob) AdMob.prepareInterstitial({
         adId: admobid.interstitial,
         autoShow: true
     });
+    */
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
       if (AdMob) AdMob.prepareInterstitial({
