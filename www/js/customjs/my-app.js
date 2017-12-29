@@ -83,7 +83,7 @@ $$(document).on('deviceready', function() {
 
     if (AdMob) AdMob.prepareRewardVideoAd({
         adId: admobid.rewardVideoAd,
-        autoShow: true,
+        autoShow: false,
         isTesting:true
     }, afterRewardVideo, function(){});
 
