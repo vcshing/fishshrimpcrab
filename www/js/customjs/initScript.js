@@ -1,5 +1,3 @@
-var defaultMapItem = getCookie("selectMapItem", "", "0")
-
 function pageInit() {
 
   /*  setLang();
@@ -16,6 +14,9 @@ function pageInit() {
 
 function mainPage() {
     pageInit()
+
+sliceGameResult() 
+
 }
 
 myApp.onPageInit('register', function(page) {

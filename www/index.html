@@ -71,7 +71,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding app_title">現金:$50000</div>
+                    <div class="center sliding app_title">現金:<span class="onhandAmtSign">$</span><span class="onhandAmt">50000</span></div>
 
                     <div class="right">
 
@@ -105,46 +105,66 @@
                         <br/>
 
                         <div class="row no-gutter">
-                            <div class="col-auto button button-fill" ><img src="./image/fish.PNG" style="width:100%"></div>
-                            <div class="col-auto  button" ><img src="./image/shrimp.PNG" style="width:100%"></div>
-                            <div class="col-auto  button" ><img src="./image/crab.PNG" style="width:100%"></div>
-                              <div class="col-auto  button"><img src="./image/money.PNG" style="width:100%"></div>
-                              <div class="col-auto  button" ><img src="./image/wo.PNG" style="width:100%"></div>
-                              <div class="col-auto  button" ><img src="./image/chicken.PNG" style="width:100%"></div>
+                            <div class="col-auto button betA" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betAAmtSign"></span>
+                                <span class="betAAmt"></span>
+                              </div>
+                              <img src="./image/fish.PNG" style="width:100%">
+                            </div>
+                            <div class="col-auto button betB" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betBAmtSign"></span>
+                                <span class="betBAmt"></span>
+                              </div>
+                              <img src="./image/shrimp.PNG" style="width:100%">
+                            </div>
                         </div>
-                              <div class="content_text">7X<div>
                         <div class="row no-gutter">
-                          <div class="col-auto button" ><img src="./image/fish.PNG" style="height:100%">
-                          <img src="./image/fish.PNG" style="height:100%"></div>
-                          <div class="col-auto  button" ><img src="./image/fish.PNG" style="height:100%">
-                            <img src="./image/shrimp.PNG" style="height:100%"></div>
-                            <div class="col-auto  button" ><img src="./image/fish.PNG" style="height:100%">
-                          <img src="./image/crab.PNG" style="height:100%"></div>
+                            <div class="col-auto  button betC" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betCAmtSign"></span>
+                                <span class="betCAmt"></span>
+                              </div>
+                                <img src="./image/crab.PNG" style="width:100%" />
+                            </div>
+                            <div class="col-auto button betD" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betDAmtSign"></span>
+                                <span class="betDAmt"></span>
+                              </div>
+                                <img src="./image/money.PNG" style="width:100%" />
+                            </div>
                         </div>
 
                         <div class="row no-gutter">
-                          <div class="col-auto button" ><img src="./image/fish.PNG" style="height:100%">
-                          <img src="./image/money.PNG" style="height:100%"></div>
-                          <div class="col-auto  button" ><img src="./image/crab.PNG" style="height:100%">
-                            <img src="./image/wo.PNG" style="height:100%"></div>
-                            <div class="col-auto  button" ><img src="./image/wo.PNG" style="height:100%">
-                          <img src="./image/chicken.PNG" style="height:100%"></div>
+                            <div class="col-auto button betE" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betEAmtSign"></span>
+                                <span class="betEAmt"></span>
+                              </div>
+                                <img src="./image/wo.PNG" style="width:100%"></div>
+                            <div class="col-auto button betF" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betFAmtSign"></span>
+                                <span class="betFAmt"></span>
+                              </div>
+                                <img src="./image/chicken.PNG" style="width:100%">
+                            </div>
                         </div>
 
-                        <div class="row no-gutter">
 
-                          </div>
+
 
                         <p class="buttons-row">
-                            <a href="#" class="button button-raised button-fill">$50</a>
-                            <a href="#" class="button button-raised">$100</a>
-                            <a href="#" class="button button-raised">$500</a>
-                            <a href="#" class="button button-raised">$1000</a>
+                            <a href="#" class="button button-raised button-fill betAmt50">$50</a>
+                            <a href="#" class="button button-raised betAmt100">$100</a>
+                            <a href="#" class="button button-raised betAmt500">$500</a>
+                            <a href="#" class="button button-raised betAmt1000">$1000</a>
                         </p>
 
                         <p class="buttons-row">
-                            <a href="#" class="button button-raised button-fill">投注</a>
-
+                            <a href="#" class="button button-raised button-fill betSubmit">投注</a>
                         </p>
                     </div>
 
@@ -154,6 +174,7 @@
             <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
             <script type="text/javascript" src="js/customjs/langArr.js"></script>
+            <script type="text/javascript" src="js/customjs/commonfunction.js"></script>
             <script type="text/javascript" src="js/customjs/function.js"></script>
             <script type="text/javascript" src="js/customjs/my-app.js"></script>
             <script type="text/javascript" src="js/customjs/commonbindEventShareFunction.js"></script>
@@ -162,20 +183,15 @@
 
             <script>
                 $(function() {
-
-                    setInterval(
-                        function() {
-                            var randNumber = Math.floor((Math.random() * 6) + 1);
-                            var randNumber2 = Math.floor((Math.random() * 6) + 1);
-                            var randNumber3 = Math.floor((Math.random() * 6) + 1);
-                            $(".result1").attr("src", imageName[randNumber])
-                            $(".result2").attr("src", imageName[randNumber2])
-                            $(".result3").attr("src", imageName[randNumber3])
-                        }, 30);
-
+                    onhandAmt = getCookie("onhandAmt", "", 3000);
+                    if(isNaN(parseInt(onhandAmt))){
+                      clearCookie("onhandAmt")
+                      onhandAmt = 3000
+                    }
+                    $(".onhandAmt").html(onhandAmt);
 
                     //lang = getCookie("lang", "selectedLang", checkLang());
-                    //  mainPage();
+                    mainPage();
                 })
             </script>
 

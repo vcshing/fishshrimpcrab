@@ -1,121 +1,116 @@
-var aProductDollar = ""
-var aProductAmount = "1"
-var aProductWeight = ""
-var aProductDollar2Unit = ""
-var aProductUnit2Dollar = ""
-var cheapProduct = ""
-var bProductDollar = ""
-var bProductAmount = "1"
-var bProductWeight = ""
-var bProductDollar2Unit = ""
-var bProductUnit2Dollar = ""
+var addbetAmt = 50;
 
-$(".aProductDollar").bind("change", function() {
-    aProductDollar = $(this).val()
-    aCalcAmount()
-    compareAB()
+/***set betAmt**/
+$(".betAmt50").bind("click", function() {
+    addbetAmt = 50;
+    $(".betAmt50").addClass("button-fill");
+    $(".betAmt100").removeClass("button-fill");
+    $(".betAmt500").removeClass("button-fill");
+    $(".betAmt1000").removeClass("button-fill");
+})
+$(".betAmt100").bind("click", function() {
+    addbetAmt = 100;
+    $(".betAmt100").addClass("button-fill");
+    $(".betAmt50").removeClass("button-fill");
+    $(".betAmt500").removeClass("button-fill");
+    $(".betAmt1000").removeClass("button-fill");
+})
+$(".betAmt500").bind("click", function() {
+    addbetAmt = 500;
+    $(".betAmt500").addClass("button-fill");
+    $(".betAmt50").removeClass("button-fill");
+    $(".betAmt100").removeClass("button-fill");
+    $(".betAmt1000").removeClass("button-fill");
+})
+$(".betAmt1000").bind("click", function() {
+    addbetAmt = 1000;
+    $(".betAmt1000").addClass("button-fill");
+    $(".betAmt50").removeClass("button-fill");
+    $(".betAmt100").removeClass("button-fill");
+    $(".betAmt500").removeClass("button-fill");
 })
 
-$(".aProductAmount").bind("click", function() {
-    if ($(this).val() == "1") {
-        aProductAmount = ""
-        $(".aProductAmount").val("")
-    }
+$(".betA").bind("click", function() {
+    renderBidButtomEvent(this, "A");
+})
+$(".betB").bind("click", function() {
+    renderBidButtomEvent(this, "B");
+})
+$(".betC").bind("click", function() {
+    renderBidButtomEvent(this, "C");
+})
+$(".betD").bind("click", function() {
+    renderBidButtomEvent(this, "D");
+})
+$(".betE").bind("click", function() {
+    renderBidButtomEvent(this, "E");
+})
+$(".betF").bind("click", function() {
+    renderBidButtomEvent(this, "F");
 })
 
-$(".aProductAmount").bind("focusout", function() {
-    if ($(this).val() == "") {
-        aProductAmount = "1"
-        $(".aProductAmount").val("1")
-    }
-})
 
+$(".betSubmit").bind("click", function() {
+    var betAAmt = isNaN(parseInt($(".betAAmt").html())) ? 0 : parseInt($(".betAAmt").html());
+    var betBAmt = isNaN(parseInt($(".betBAmt").html())) ? 0 : parseInt($(".betBAmt").html());
+    var betCAmt = isNaN(parseInt($(".betCAmt").html())) ? 0 : parseInt($(".betCAmt").html());
+    var betDAmt = isNaN(parseInt($(".betDAmt").html())) ? 0 : parseInt($(".betDAmt").html());
+    var betEAmt = isNaN(parseInt($(".betEAmt").html())) ? 0 : parseInt($(".betEAmt").html());
+    var betFAmt = isNaN(parseInt($(".betFAmt").html())) ? 0 : parseInt($(".betFAmt").html());
+    //debugger;
+    var totalBetAmt = betAAmt + betBAmt + betCAmt + betDAmt + betEAmt + betFAmt
 
-$(".aProductAmount").bind("change", function() {
+    if ( totalBetAmt> 0) {
+        //alert(1);
+        clearInterval(sliceResult);
+        var sliceResultA = $(".result1").attr("data-imageSign");
+        var sliceResultB = $(".result2").attr("data-imageSign");
+        var sliceResultC = $(".result3").attr("data-imageSign");
+        var winAmt = 0
 
-
-    aProductAmount = $(this).val()
-
-    aCalcAmount()
-    compareAB()
-})
-
-$(".aProductWeight").bind("change", function() {
-    aProductWeight = $(this).val()
-    aCalcAmount()
-    compareAB()
-})
-
-$(".bProductDollar").bind("change", function() {
-    bProductDollar = $(this).val()
-    bCalcAmount()
-    compareAB()
-})
-
-$(".bProductAmount").bind("click", function() {
-    if ($(this).val() == "1") {
-        bProductAmount = ""
-        $(".bProductAmount").val("")
-    }
-})
-
-$(".aProductAmount").bind("focusout", function() {
-    if ($(this).val() == "") {
-        bProductAmount = "1"
-        $(".bProductAmount").val("1")
-    }
-})
-
-$(".bProductAmount").bind("change", function() {
-
-    bProductAmount = $(this).val()
-
-    bCalcAmount()
-    compareAB()
-})
-
-$(".bProductWeight").bind("change", function() {
-    bProductWeight = $(this).val()
-    bCalcAmount()
-    compareAB()
-})
-
-function aCalcAmount() {
-    if (aProductDollar != "" && aProductAmount != "" && aProductWeight != "") {
-        aProductDollar2Unit = (aProductWeight * aProductAmount) / aProductDollar
-        aProductUnit2Dollar = aProductDollar / (aProductWeight * aProductAmount)
-        $(".aProductDollar2Unit").html(aProductDollar2Unit)
-        $(".aProductUnit2Dollar").html(aProductUnit2Dollar)
-    } else {
-        aProductDollar2Unit = ""
-        aProductUnit2Dollar = ""
-        $(".aProductDollar2Unit").html(aProductDollar2Unit)
-        $(".aProductUnit2Dollar").html(aProductUnit2Dollar)
-    }
-}
-
-function bCalcAmount() {
-    if (bProductDollar != "" && bProductAmount != "" && bProductWeight != "") {
-        bProductDollar2Unit = (bProductWeight * bProductAmount) / bProductDollar
-        bProductUnit2Dollar = bProductDollar / (bProductWeight * bProductAmount)
-        $(".bProductDollar2Unit").html(bProductDollar2Unit)
-        $(".bProductUnit2Dollar").html(bProductUnit2Dollar)
-    } else {
-        bProductDollar2Unit = ""
-        bProductUnit2Dollar = ""
-        $(".bProductDollar2Unit").html(bProductDollar2Unit)
-        $(".bProductUnit2Dollar").html(bProductUnit2Dollar)
-    }
-}
-
-function compareAB() {
-    if (aProductDollar2Unit != "" && bProductDollar2Unit != "") {
-        if (aProductDollar2Unit > bProductDollar2Unit) {
-            $(".cheapProduct").html($(".aProductName").html());
-        } else {
-            $(".cheapProduct").html($(".bProductName").html());
+        switch (sliceResultA) {
+            case "A":  winAmt += betAAmt ;  break;
+            case "B":  winAmt += betBAmt ;  break;
+            case "C":  winAmt += betCAmt ;  break;
+            case "D":  winAmt += betDAmt ;  break;
+            case "E":  winAmt += betEAmt ;  break;
+            case "F":  winAmt += betFAmt ;  break;
+            default:
         }
-    } else {
-        $(".cheapProduct").html("");
+        switch (sliceResultB) {
+            case "A":  winAmt += betAAmt ;  break;
+            case "B":  winAmt += betBAmt ;  break;
+            case "C":  winAmt += betCAmt ;  break;
+            case "D":  winAmt += betDAmt ;  break;
+            case "E":  winAmt += betEAmt ;  break;
+            case "F":  winAmt += betFAmt ;  break;
+            default:
+        }
+        switch (sliceResultC) {
+            case "A":  winAmt += betAAmt ;  break;
+            case "B":  winAmt += betBAmt ;  break;
+            case "C":  winAmt += betCAmt ;  break;
+            case "D":  winAmt += betDAmt ;  break;
+            case "E":  winAmt += betEAmt ;  break;
+            case "F":  winAmt += betFAmt ;  break;
+            default:
+        }
+        var netAmt=  (winAmt * 2) - totalBetAmt;
+
+        if(netAmt > 0){
+          winAlert(netAmt)
+        }else if(netAmt < 0)
+        {
+          lostAlert(Math.abs(netAmt))
+        }else{
+          drewAlert(netAmt)
+        }
+          var currentBalance=isNaN(parseInt($(".onhandAmt").html())) ? 0 : parseInt($(".onhandAmt").html())
+          var newBalance = currentBalance + totalBetAmt + netAmt
+          setMoney(newBalance)
+          clearGameResult()
+          //sliceGameResult()
+    }else{
+      noMoneyAlert(netAmt)
     }
-}
+})

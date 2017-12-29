@@ -20,7 +20,6 @@ window.fakeStorage = {
 
 function LocalStorageManager() {
 	this.cookieKey ="";
-	this.selectedTwelveConstellations="";
   var supported = this.localStorageSupported();
   this.storage = supported ? window.localStorage : window.fakeStorage;
 }
@@ -38,32 +37,21 @@ LocalStorageManager.prototype.localStorageSupported = function () {
   }
 };
 
-// Best score getters/setters
-LocalStorageManager.prototype.getSelectedTwelveConstellations = function () {
-  return this.storage.getItem(this.selectedTwelveConstellations) || "";
-};
 
-LocalStorageManager.prototype.setSelectedTwelveConstellations = function (data) {
-  this.storage.setItem(this.selectedTwelveConstellations, data);
-};
-
-LocalStorageManager.prototype.clearSelectedTwelveConstellations = function () {
-  this.storage.removeItem(this.SelectedTwelveConstellations);
-};
 
 
 // Game state getters/setters and clearing
-LocalStorageManager.prototype.getCookie = function () {
-  var stateJSON = this.storage.getItem(this.cookieKey);
+LocalStorageManager.prototype.getCookie = function (key) {
+  var stateJSON = this.storage.getItem(key);
   return stateJSON ? JSON.parse(stateJSON) : null;
 };
 
-LocalStorageManager.prototype.setCookie = function (inputArr) {
-  this.storage.setItem(this.cookieKey, JSON.stringify(inputArr));
+LocalStorageManager.prototype.setCookie = function (key,inputArr) {
+  this.storage.setItem(key, JSON.stringify(inputArr));
 };
 
-LocalStorageManager.prototype.clearCookie = function () {
-  this.storage.removeItem(this.cookieKey);
+LocalStorageManager.prototype.clearCookie = function (key) {
+  this.storage.removeItem(key);
 };
 
 var storageManager = new LocalStorageManager();
