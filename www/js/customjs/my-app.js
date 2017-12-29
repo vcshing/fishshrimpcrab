@@ -37,7 +37,9 @@ var mainView = myApp.addView('.view-main', {
 //myApp.preprocess("","","")
 
 // Handle Cordova Device Ready Event
-
+randomEvent(50, function() {
+  admob.interstitial.show()
+});
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 
