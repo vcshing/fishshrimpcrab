@@ -90,12 +90,14 @@ $$(document).on('deviceready', function() {
 
     if (AdMob) AdMob.prepareInterstitial({
         adId: admobid.interstitial,
-        autoShow: false
-
+        autoShow: true
     });
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
-        AdMob.showInterstitial();
+      if (AdMob) AdMob.prepareInterstitial({
+          adId: admobid.interstitial,
+          autoShow: true
+      });
     });
 
 
