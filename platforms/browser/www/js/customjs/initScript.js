@@ -1,8 +1,7 @@
 function mainPage() {
     pageInit()
-
-sliceGameResult()
-
+    prepareRewardVideoAd(appConfigArr["androidAdmobBonusID"]);
+    sliceGameResult()
 }
 
 function pageInit() {

@@ -6,21 +6,13 @@ function noMoneyAlert() {
         buttons: [{
                 text: '看廣告',
                 onClick: function() {
-
-                    if (AdMob) AdMob.prepareRewardVideoAd({
-                        adId: admobid.rewardVideoAd,
-                        autoShow: true
-                    });
-
+                  showRewardVideoAd();
                 }
             },
             {
                 text: '取消',
                 onClick: function() {
-                    if (AdMob) AdMob.prepareInterstitial({
-                        adId: admobid.interstitial,
-                        autoShow: true
-                    });
+                    
                 }
             }
         ]
