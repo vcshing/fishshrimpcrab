@@ -7,13 +7,15 @@ function noMoneyAlert() {
       {
         text: '看廣告',
         onClick: function() {
+            alert(JSON.stringify(AdMob));
           AdMob.showRewardVideoAd();
+
         }
       },
       {
         text: '取消',
         onClick: function() {
-          cordova.exec( successCallback, failureCallback, 'AdMob', 'showRewardVideoAd', [] );
+
         }
       }
     ]

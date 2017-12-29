@@ -74,6 +74,7 @@ $$(document).on('deviceready', function() {
     });
 
     if (AdMob) {
+    
         AdMob.prepareRewardVideoAd({
             adId: admobid.rewardVideoAd,
             autoShow: false,
@@ -83,6 +84,7 @@ $$(document).on('deviceready', function() {
         }, function() {
 
         });
+
     } else {
     }
 
@@ -101,6 +103,7 @@ $$(document).on('deviceready', function() {
 });
 
 document.addEventListener('onAdPresent', function(e) {
+
   //  location.reload();
 });
 
