@@ -34,9 +34,6 @@
     "cordova-plugin-x-toast": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
-    "cordova-plugin-admob-free": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-admobpro": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     }
@@ -46,12 +43,6 @@
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "phonegap-plugin-barcodescanner": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-promise-polyfill": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-admob-sdk": {
       "PACKAGE_NAME": "io.cordova.hellocordova"
     },
     "cordova-plugin-extension": {

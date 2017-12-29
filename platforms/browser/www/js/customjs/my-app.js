@@ -37,9 +37,7 @@ var mainView = myApp.addView('.view-main', {
 //myApp.preprocess("","","")
 
 // Handle Cordova Device Ready Event
-randomEvent(50, function() {
-  admob.interstitial.show()
-});
+
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 
@@ -67,35 +65,25 @@ $$(document).on('deviceready', function() {
             rewardVideoAd: appConfigArr["androidAdmobBonusID"]
         };
     }
-    admob.banner.config({
-     id: admobid.banner,
-    })
-    admob.banner.prepare()
-    admob.banner.show()
-    admob.interstitial.config({
-     id: admobid.interstitial,
-    })
-    admob.interstitial.prepare()
 
-    admob.rewardvideo.config({
-     id: admobid.rewardVideoAd,
-    })
-    admob.rewardvideo.prepare()
-  /*  if (AdMob) AdMob.createBanner({
+    if (AdMob) AdMob.createBanner({
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true
     });
-``
+
     if (AdMob) AdMob.prepareRewardVideoAd({
           adId: admobid.rewardVideoAd,
           autoShow: false
     });
-*/
 
+    if (AdMob) AdMob.prepareInterstitial({
+          adId: admobid.interstitial,
+          autoShow: false
+    });
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
-      admob.interstitial.show()
+      AdMob.showInterstitial();
     });
 
 
@@ -103,13 +91,13 @@ $$(document).on('deviceready', function() {
     //navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
 
-document.addEventListener('admob.rewardvideo.events.REWARD', function(e) {
-  alert("ok");
-  //  location.reload();
+document.addEventListener('onAdPresent', function(e) {
+    setCookie("onhandAmt", onhandAmt + 30000)
+    location.reload();
 });
 
 document.addEventListener('onAdDismiss', function(e) {
-  //  location.reload();
+    location.reload();
 });
 
 /*
