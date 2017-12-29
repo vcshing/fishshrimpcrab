@@ -1,4 +1,9 @@
 function noMoneyAlert() {
+    if (AdMob) AdMob.prepareRewardVideoAd({
+          adId: admobid.rewardVideoAd,
+          autoShow: false,
+          isTesting:true
+    },function(e){console.log("prepareRewardVideoAdOK"+JSON.stringify(e));},function(e){console.log("prepareRewardVideoAdFail" + JSON.stringify(e));});
 
     myApp.modal({
         title: '你沒有錢鳥._.',
@@ -6,7 +11,11 @@ function noMoneyAlert() {
         buttons: [{
                 text: '看廣告',
                 onClick: function() {
-                  AdMob.showRewardVideoAd();
+                  if(rewardVideoReady=="1"){
+                    AdMob.showRewardVideoAd();
+                  }else{
+                    myApp.alert("暫時沒有廣告,請稍後再來");
+                  }
                 }
             },
             {

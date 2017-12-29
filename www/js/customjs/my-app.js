@@ -96,19 +96,25 @@ $$(document).on('deviceready', function() {
 
 document.addEventListener('onAdPresent', function(e) {
     setCookie("onhandAmt", onhandAmt + 30000)
-    location.reload();
+  //  location.reload();
 });
 
 document.addEventListener('onAdDismiss', function(e) {
-    location.reload();
+  //  location.reload();
 });
 
 
 document.addEventListener('onAdLoaded', function(e) {
+  if(e.adType=="rewardvideo"){
+    rewardVideoReady = "1";
+  }
       console.log("onAdLoaded:"+JSON.stringify(e));
 });
 
 document.addEventListener('onAdFailLoad', function(e) {
+    if(e.adType=="rewardvideo"){
+      rewardVideoReady = "0";
+    }
     console.log("onAdFailLoad:"+JSON.stringify(e));
 });
 

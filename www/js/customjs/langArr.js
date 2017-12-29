@@ -9,6 +9,7 @@ var imagePath = []
 var onhandAmt
 var sliceResult;
 var CloneAdmob;
+var rewardVideoReady=1;
 appConfigArr={
   "appName" :	"Fish Shrimp Crab",
   "appDescription"	:	"Fish Shrimp Crab",
