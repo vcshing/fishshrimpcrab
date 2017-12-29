@@ -1,6 +1,7 @@
 var lang
 var appConfigArr = []
 var defaultLangArr = []
+var admobid = {};
 var menuArr= []
 var menuSiteArr= []
 var loopLangArr = []

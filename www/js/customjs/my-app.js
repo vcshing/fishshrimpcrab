@@ -45,7 +45,7 @@ $$(document).on('deviceready', function() {
 
 
     // Set AdMobAds options:
-    var admobid = {};
+    
     if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
         admobid = {
             banner: appConfigArr["androidAdmobBannerID"], // or DFP format "/6253334/dfp_example_ad"
