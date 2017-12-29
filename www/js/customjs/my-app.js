@@ -76,7 +76,7 @@ $$(document).on('deviceready', function() {
           adId: admobid.rewardVideoAd,
           autoShow: false,
           isTesting:true
-    });
+    },function(e){console.log(e);},function(e){console.log(e);});
 
     if (AdMob) AdMob.prepareInterstitial({
           adId: admobid.interstitial,
@@ -103,20 +103,20 @@ document.addEventListener('onAdDismiss', function(e) {
 
 
 document.addEventListener('onAdLoaded', function(e) {
-    console(e);
+      console("onAdLoaded:"+e);
 });
 
 document.addEventListener('onAdFailLoad', function(e) {
-  //  alert("onAdFailLoad");
+    console("onAdFailLoad:"+e);
 });
 
 
 
 document.addEventListener('onAdLeaveApp', function(e) {
-    //alert("onAdLeaveApp");
+    console("onAdLeaveApp:"+e);
 });
 // Now we need to run the code that will be executed only for About page.
-*/
+
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('about', function(page) {
     // Do something here for "about" page
