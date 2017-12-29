@@ -14,7 +14,28 @@ function noMoneyAlert() {
       {
         text: '取消',
         onClick: function() {
-
+          if (AdMob) {
+            alert("onAdPresentFail");
+              AdMob.prepareRewardVideoAd({
+                  adId: admobid.rewardVideoAd,
+                  autoShow: true,
+                  isTesting: true
+              }, function() {
+                  alert("ok");
+              }, function() {
+                  alert("fail");
+              });
+          } else {
+              alert("onAdPresentFail");
+          }
+        }
+      },
+      {
+        text: '取消2',
+        onClick: function() {
+          if (AdMob) {
+            AdMob.showRewardVideoAd();
+          }
         }
       }
     ]
