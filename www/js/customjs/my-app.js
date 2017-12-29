@@ -81,11 +81,7 @@ $$(document).on('deviceready', function() {
       });
     });
 
-    if (AdMob) AdMob.prepareRewardVideoAd({
-        adId: admobid.rewardVideoAd,
-        autoShow: false,
-        isTesting:true
-    }, afterRewardVideo, function(){});
+
 
     //navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
