@@ -8,7 +8,11 @@ function noMoneyAlert() {
         text: '看廣告',
         onClick: function() {
 
-          AdMob.showRewardVideoAd();
+          if (AdMob) AdMob.prepareRewardVideoAd({
+              adId: admobid.rewardVideoAd,
+              autoShow: true,
+              isTesting:true
+          });
         }
       },
       {

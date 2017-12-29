@@ -71,11 +71,7 @@ $$(document).on('deviceready', function() {
         isTesting:true
     });
 
-    if (AdMob) AdMob.prepareRewardVideoAd({
-        adId: admobid.rewardVideoAd,
-        autoShow: false,
-        isTesting:true
-    }, function(){afterRewardVideo();alert("ok")}, function(){alert("fail")});
+
 
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
@@ -91,7 +87,25 @@ $$(document).on('deviceready', function() {
     //navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
 
+document.addEventListener('onAdLoaded', function(e){
+    alert("onAdLoaded");
+});
 
+document.addEventListener('onAdFailLoad', function(e){
+    alert("onAdFailLoad");
+});
+
+document.addEventListener('onAdPresent', function(e){
+      alert("onAdPresent");
+});
+
+document.addEventListener('onAdDismiss', function(e){
+    alert("onAdDismiss");
+});
+
+document.addEventListener('onAdLeaveApp', function(e){
+      alert("onAdLeaveApp");
+});
 // Now we need to run the code that will be executed only for About page.
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
