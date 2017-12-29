@@ -74,7 +74,8 @@ $$(document).on('deviceready', function() {
 
     if (AdMob) AdMob.prepareRewardVideoAd({
           adId: admobid.rewardVideoAd,
-          autoShow: false
+          autoShow: false,
+          isTesting:true
     });
 
     if (AdMob) AdMob.prepareInterstitial({
@@ -100,9 +101,9 @@ document.addEventListener('onAdDismiss', function(e) {
     location.reload();
 });
 
-/*
+
 document.addEventListener('onAdLoaded', function(e) {
-  //  alert("onAdLoaded");
+    console(e);
 });
 
 document.addEventListener('onAdFailLoad', function(e) {
