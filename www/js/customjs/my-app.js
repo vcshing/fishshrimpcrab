@@ -77,7 +77,7 @@ $$(document).on('deviceready', function() {
           adId: admobid.rewardVideoAd,
           autoShow: false,
           isTesting:true
-    },function(e){console.log(e);},function(e){console.log(e);});
+    },function(e){console.log("prepareRewardVideoAdOK"+JSON.stringify(e));},function(e){console.log("prepareRewardVideoAdFail" + JSON.stringify(e));});
 
     if (AdMob) AdMob.prepareInterstitial({
           adId: admobid.interstitial,
@@ -105,17 +105,17 @@ document.addEventListener('onAdDismiss', function(e) {
 
 
 document.addEventListener('onAdLoaded', function(e) {
-      console.log("onAdLoaded:"+e);
+      console.log("onAdLoaded:"+JSON.stringify(e));
 });
 
 document.addEventListener('onAdFailLoad', function(e) {
-    console.log("onAdFailLoad:"+e);
+    console.log("onAdFailLoad:"+JSON.stringify(e));
 });
 
 
 
 document.addEventListener('onAdLeaveApp', function(e) {
-    console.log("onAdLeaveApp:"+e);
+    console.log("onAdLeaveApp:"+JSON.stringify(e));
 });
 // Now we need to run the code that will be executed only for About page.
 
