@@ -12,6 +12,7 @@ function noMoneyAlert() {
               autoShow: true,
               isTesting:true
           }, afterRewardVideo, function(){alert("fail")});
+          showRewardVideoAd();
         }
       },
       {
