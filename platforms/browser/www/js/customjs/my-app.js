@@ -101,11 +101,11 @@ $$(document).on('deviceready', function() {
 });
 
 document.addEventListener('onAdPresent', function(e) {
-    location.reload();
+  //  location.reload();
 });
 
 document.addEventListener('onAdDismiss', function(e) {
-    location.reload();
+  //  location.reload();
 });
 
 /*

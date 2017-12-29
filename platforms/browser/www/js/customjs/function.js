@@ -13,7 +13,7 @@ function noMoneyAlert() {
       {
         text: '取消',
         onClick: function() {
-
+          cordova.exec( successCallback, failureCallback, 'AdMob', 'showRewardVideoAd', [] );
         }
       }
     ]
@@ -91,7 +91,7 @@ function renderBidButtomEvent(element, order) {
         $(".bet" + order + "Amt").html(betAmt)
     } else {
       window.plugins.toast.show(
-          "你沒錢了,先按投注吧", 'short', 'top',
+          "你沒錢了,先按投注吧", 'short', 'center',
           function(a) {
               console.log('toast success: ' + a)
           },
