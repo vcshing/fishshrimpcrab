@@ -7,7 +7,7 @@ function noMoneyAlert() {
       {
         text: '看廣告',
         onClick: function() {
-            alert(JSON.stringify(AdMob));
+          
           AdMob.showRewardVideoAd();
 
         }
@@ -15,7 +15,7 @@ function noMoneyAlert() {
       {
         text: '取消',
         onClick: function() {
-
+          AdMob.showInterstitial();
         }
       }
     ]
