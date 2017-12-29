@@ -71,12 +71,6 @@ $$(document).on('deviceready', function() {
         isTesting: true
     });
 
-    if (AdMob) AdMob.prepareRewardVideoAd({
-        adId: admobid.rewardVideoAd,
-        autoShow: false,
-        isTesting: true
-    });
-
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
         if (AdMob) AdMob.prepareInterstitial({
