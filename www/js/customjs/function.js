@@ -18,7 +18,7 @@ function noMoneyAlert() {
             alert("ok");
               AdMob.prepareRewardVideoAd({
                   adId: admobid.rewardVideoAd,
-                  autoShow: true,
+                  autoShow: false,
                   isTesting: true
               }, function() {
                   alert("ok");

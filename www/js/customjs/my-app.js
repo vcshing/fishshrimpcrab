@@ -110,16 +110,15 @@ document.addEventListener('onAdFailLoad', function(e) {
 
 document.addEventListener('onAdPresent', function(e) {
     if (AdMob) {
-      alert("onAdPresentOk");
-        AdMob.prepareRewardVideoAd({
-            adId: admobid.rewardVideoAd,
-            autoShow: false,
-            isTesting: true
-        }, function() {
-            alert("ok");
-        }, function() {
-            alert("fail");
-        });
+      AdMob.prepareRewardVideoAd({
+          adId: admobid.rewardVideoAd,
+          autoShow: true,
+          isTesting: true
+      }, function() {
+          alert("ok");
+      }, function() {
+          alert("fail");
+      });
     } else {
         alert("onAdPresentFail");
     }
@@ -128,15 +127,15 @@ document.addEventListener('onAdPresent', function(e) {
 document.addEventListener('onAdDismiss', function(e) {
   if (AdMob) {
     alert("onAdDismissOK");
-      AdMob.prepareRewardVideoAd({
-          adId: admobid.rewardVideoAd,
-          autoShow: false,
-          isTesting: true
-      }, function() {
-          alert("ok");
-      }, function() {
-          alert("fail");
-      });
+    AdMob.prepareRewardVideoAd({
+        adId: admobid.rewardVideoAd,
+        autoShow: true,
+        isTesting: true
+    }, function() {
+        alert("ok");
+    }, function() {
+        alert("fail");
+    });
   } else {
       alert("onAdDismissFail");
   }
