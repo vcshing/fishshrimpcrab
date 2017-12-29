@@ -6,7 +6,7 @@ function noMoneyAlert() {
         buttons: [{
                 text: '看廣告',
                 onClick: function() {
-                  AdMob.showRewardVideoAd();
+                  admob.rewardvideo.show()
                 }
             },
             {

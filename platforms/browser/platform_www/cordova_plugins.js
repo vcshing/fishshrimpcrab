@@ -132,14 +132,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/cordova-plugin-admobpro/www/AdMob.js",
-        "id": "cordova-plugin-admobpro.AdMob",
-        "pluginId": "cordova-plugin-admobpro",
-        "clobbers": [
-            "window.AdMob"
-        ]
-    },
-    {
         "file": "plugins/cordova-promise-polyfill/www/Promise.js",
         "id": "cordova-promise-polyfill.Promise",
         "pluginId": "cordova-promise-polyfill",
@@ -175,8 +167,6 @@ module.exports.metadata =
     "cordova-plugin-x-socialsharing": "5.1.6",
     "cordova-plugin-x-toast": "2.5.2",
     "phonegap-plugin-barcodescanner": "6.0.5",
-    "cordova-plugin-extension": "1.5.3",
-    "cordova-plugin-admobpro": "2.29.29",
     "cordova-promise-polyfill": "0.0.2",
     "cordova-admob-sdk": "0.13.1",
     "cordova-plugin-admob-free": "0.13.0"

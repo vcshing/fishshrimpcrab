@@ -65,25 +65,35 @@ $$(document).on('deviceready', function() {
             rewardVideoAd: appConfigArr["androidAdmobBonusID"]
         };
     }
+    admob.banner.config({
+     id: admobid.banner,
+    })
+    admob.banner.prepare()
+    admob.banner.show()
+    admob.interstitial.config({
+     id: admobid.interstitial,
+    })
+    admob.interstitial.prepare()
 
-    if (AdMob) AdMob.createBanner({
+    admob.rewardvideo.config({
+     id: admobid.rewardVideoAd,
+    })
+    admob.rewardvideo.prepare()
+  /*  if (AdMob) AdMob.createBanner({
         adId: admobid.banner,
         position: AdMob.AD_POSITION.BOTTOM_CENTER,
         autoShow: true
     });
-
+``
     if (AdMob) AdMob.prepareRewardVideoAd({
           adId: admobid.rewardVideoAd,
           autoShow: false
     });
-
+*/
 
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
     randomEvent(50, function() {
-      if (AdMob) AdMob.prepareInterstitial({
-          adId: admobid.interstitial,
-          autoShow: true
-      });
+      admob.interstitial.show()
     });
 
 
@@ -91,8 +101,8 @@ $$(document).on('deviceready', function() {
     //navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
 
-document.addEventListener('onAdPresent', function(e) {
-
+document.addEventListener('admob.rewardvideo.events.REWARD', function(e) {
+  alert("ok");
   //  location.reload();
 });
 
