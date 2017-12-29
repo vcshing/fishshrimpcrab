@@ -1,8 +1,13 @@
-var defaultMapItem = getCookie("selectMapItem", "", "0")
+function mainPage() {
+    pageInit()
+
+sliceGameResult()
+
+}
 
 function pageInit() {
 
-    setLang();
+  /*  setLang();
       myApp.showPreloader();
     frontEndTranslateToSelectedLang(defaultLangArr, function(translatedLangArr) {
         assignWordClassTranslation(translatedLangArr, "word");
@@ -11,10 +16,7 @@ function pageInit() {
     setTimeout(function(){
       myApp.hidePreloader();
     },2000)
-}
-
-function mainPage() {
-    pageInit()
+    */
 }
 
 myApp.onPageInit('register', function(page) {

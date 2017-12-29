@@ -16,7 +16,6 @@ $(".langen").bind("click", function() {
         "selectedLang": lang
     });
     pageInit();
-
 })
 
 $(".langtc").bind("click", function() {

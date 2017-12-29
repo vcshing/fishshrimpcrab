@@ -71,7 +71,7 @@
             <div class="navbar">
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-                    <div class="center sliding app_title">Price Radio</div>
+                    <div class="center sliding app_title">現金:<span class="onhandAmtSign">$</span><span class="onhandAmt">50000</span></div>
 
                     <div class="right">
 
@@ -92,190 +92,91 @@
                     <!-- Scrollable page content -->
 
                     <div class="page-content">
+                        <br/>
+                        <div class="row no-gutter">
+                            <div class="col-auto"></div>
+                            <div class="col-auto" style="height:40%"><img class="result1" src="./image/fish.png" style="width:100%"></div>
+                            <div class="col-auto  " style="height:40%"><img class="result2" src="./image/shrimp.png" style="width:100%"></div>
+                            <div class="col-auto  " style="height:40%"><img class="result3" src="./image/crab.png" style="width:100%"></div>
+                            <div class="col-auto"></div>
+                        </div>
+
+
+                        <br/>
+
+                        <div class="row no-gutter">
+                            <div class="col-auto button betA" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betAAmtSign"></span>
+                                <span class="betAAmt"></span>
+                              </div>
+                              <img src="./image/fish.png" style="width:100%">
+                            </div>
+                            <div class="col-auto button betB" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betBAmtSign"></span>
+                                <span class="betBAmt"></span>
+                              </div>
+                              <img src="./image/shrimp.png" style="width:100%">
+                            </div>
+                        </div>
+                        <div class="row no-gutter">
+                            <div class="col-auto  button betC" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betCAmtSign"></span>
+                                <span class="betCAmt"></span>
+                              </div>
+                                <img src="./image/crab.png" style="width:100%" />
+                            </div>
+                            <div class="col-auto button betD" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betDAmtSign"></span>
+                                <span class="betDAmt"></span>
+                              </div>
+                                <img src="./image/money.png" style="width:100%" />
+                            </div>
+                        </div>
+
+                        <div class="row no-gutter">
+                            <div class="col-auto button betE" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betEAmtSign"></span>
+                                <span class="betEAmt"></span>
+                              </div>
+                                <img src="./image/wo.png" style="width:100%"></div>
+                            <div class="col-auto button betF" style="height:100%">
+                              <div style="position:absolute">
+                                <span class="betFAmtSign"></span>
+                                <span class="betFAmt"></span>
+                              </div>
+                                <img src="./image/chicken.png" style="width:100%">
+                            </div>
+                        </div>
+
+
+
+
                         <p class="buttons-row">
-                            <a href="#" class="button langDefault word">Default Language</a>
-                            <a href="#" class="button langen">English</a>
+                            <a href="#" class="button button-raised button-fill betAmt50">$50</a>
+                            <a href="#" class="button button-raised betAmt100">$100</a>
+                            <a href="#" class="button button-raised betAmt500">$500</a>
+                            <a href="#" class="button button-raised betAmt1000">$1000</a>
                         </p>
-                        <div>
-                            <p class="buttons-row">
-                                <div style="padding-left:80%;;right:0px;;width:20%"><a href="#" class="color-pink button button-raised word">計算</a></div>
-                            </p>
-                        </div>
-                        <div class="list-block card">
-                            <ul>
-                                <!-- Text inputs -->
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon f7-icons">tags</i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title label"></div>
-                                            <div class="item-input word aProductName">
 
-                                            </div>
-                                            <div class="item-input word bProductName" style="margin-left:21px;">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label word"> </div>
-                                            <div class="item-input">
-                                                <input type="number" class="word aProductDollar">
-                                            </div>
-                                            <div class="item-input">
-                                                <input type="number" class="word bProductDollar">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label word "> </div>
-                                            <div class="item-input">
-                                                <input type="number" value="1" class="word aProductAmount">
-                                            </div>
-                                            <div class="item-input">
-                                                <input type="number" value="1" class="word bProductAmount">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-inner">
-                                            <div class="item-title label word"> </div>
-                                            <div class="item-input">
-                                                <input type="number" class="word aProductWeight">
-                                            </div>
-                                            <div class="item-input">
-                                                <input type="number" class="word bProductWeight">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="content-block-title word">分析</div>
-                        <div class="list-block card">
-                            <ul>
-                                <!-- Text inputs -->
-                                <li>
-                                    <div class="item-content">
-                                        <div class="item-media"><i class="icon f7-icons">zoom_in</i></div>
-                                        <div class="item-inner">
-                                            <div class="item-title label word">最抵</div>
-                                        </div>
-
-                                        <div class="item-media"><i class="icon f7-icons">tags</i></div>
-                                        <div class="item-inner">
-                                            <div class="item-input cheapProduct">
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <div class="content-block-title word">產品A</div>
-                            <div class="list-block card">
-                                <ul>
-
-
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-media"><i class="icon f7-icons">money_dollar</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-title  word">每一元</div>
-                                            </div>
-                                            <div class="item-media"><i class="icon f7-icons">bag</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-input aProductDollar2Unit">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Select -->
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-media"><i class="icon f7-icons">bag</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-title  word">每一單位</div>
-                                            </div>
-                                            <div class="item-media"><i class="icon f7-icons">money_dollar</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-input aProductUnit2Dollar">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-
-
-
-                            <div class="content-block-title word">產品B</div>
-                            <div class="list-block card">
-                                <ul>
-                                    <!-- Text inputs -->
-
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-media"><i class="icon f7-icons">money_dollar</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-title  word">每一單位</div>
-                                            </div>
-                                            <div class="item-media"><i class="icon f7-icons">bag</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-input bProductDollar2Unit">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                    <!-- Select -->
-                                    <li>
-                                        <div class="item-content">
-                                            <div class="item-media"><i class="icon f7-icons">bag</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-title  word">每一單位</div>
-                                            </div>
-                                            <div class="item-media"><i class="icon f7-icons">money_dollar</i></div>
-                                            <div class="item-inner">
-                                                <div class="item-input bProductUnit2Dollar">
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-
-                                </ul>
-                            </div>
-                        </div>
-
-
+                        <p class="buttons-row">
+                            <a href="#" class="button button-raised button-fill betSubmit">投注</a>
+                        </p>
                     </div>
 
                 </div>
             </div>
 
-
+            <script type="text/javascript" src="cordova.js"></script>
             <script type="text/javascript" src="lib/framework7/js/framework7.js"></script>
             <script type="text/javascript" src="js/customjs/langArr.js"></script>
-            <script type="text/javascript" src="js/customjs/function.js"></script>
             <script type="text/javascript" src="js/customjs/my-app.js"></script>
+            <script type="text/javascript" src="js/customjs/commonfunction.js"></script>
+            <script type="text/javascript" src="js/customjs/function.js"></script>
             <script type="text/javascript" src="js/customjs/commonbindEventShareFunction.js"></script>
             <script type="text/javascript" src="js/customjs/bindEventShareFunction.js"></script>
             <script type="text/javascript" src="js/customjs/initScript.js"></script>
@@ -283,8 +184,16 @@
             <script>
                 $(function() {
 
-                    lang = getCookie("lang", "selectedLang", checkLang());
+                    onhandAmt = getCookie("onhandAmt", "", 3000);
+                    if(isNaN(parseInt(onhandAmt))){
+                      clearCookie("onhandAmt")
+                      onhandAmt = 3000
+                    }
+                    $(".onhandAmt").html(onhandAmt);
+
+                    //lang = getCookie("lang", "selectedLang", checkLang());
                     mainPage();
+
                 })
             </script>
 

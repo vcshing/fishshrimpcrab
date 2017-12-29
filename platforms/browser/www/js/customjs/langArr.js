@@ -4,15 +4,31 @@ var defaultLangArr = []
 var menuArr= []
 var menuSiteArr= []
 var loopLangArr = []
-
+var imageSign = []
+var imagePath = []
+var onhandAmt
+var sliceResult;
 appConfigArr={
-  "appName" :	"Best Choice",
-  "appDescription"	:	"Best Choice",
-  "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.skyexplorer.goodprice",
-  "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/1437729084",
-  "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/8549932345"
+  "appName" :	"Fish Shrimp Crab",
+  "appDescription"	:	"Fish Shrimp Crab",
+  "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.skyexplorer.fishshrimpcrab",
+  "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/2688306979",
+  "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/2468815124",
+  "androidAdmobBonusID"	:"ca-app-pub-3715336230214756/9086194367"
 }
 
+imageSign.push("A")
+imageSign.push("B")
+imageSign.push("C")
+imageSign.push("D")
+imageSign.push("E")
+imageSign.push("F")
+imagePath.push("./image/fish.png")
+imagePath.push("./image/shrimp.png")
+imagePath.push("./image/crab.png")
+imagePath.push("./image/money.png")
+imagePath.push("./image/wo.png")
+imagePath.push("./image/chicken.png")
 
 
 defaultLangArr.push("Other Apps");
@@ -31,8 +47,8 @@ defaultLangArr.push("數量");
 defaultLangArr.push("每件重量");
 defaultLangArr.push("每件重量");
 defaultLangArr.push("每件重量");
-defaultLangArr.push("分析");
-defaultLangArr.push("最平");
+defaultLangArr.push("建議");
+defaultLangArr.push("最便宜");
 
 defaultLangArr.push("產品A");
 defaultLangArr.push("每一元");

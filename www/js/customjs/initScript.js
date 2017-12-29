@@ -1,3 +1,10 @@
+function mainPage() {
+    pageInit()
+
+sliceGameResult()
+
+}
+
 function pageInit() {
 
   /*  setLang();
@@ -10,13 +17,6 @@ function pageInit() {
       myApp.hidePreloader();
     },2000)
     */
-}
-
-function mainPage() {
-    pageInit()
-
-sliceGameResult() 
-
 }
 
 myApp.onPageInit('register', function(page) {

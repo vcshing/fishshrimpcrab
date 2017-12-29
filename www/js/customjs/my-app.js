@@ -26,6 +26,8 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+
+
 //mainView.router.loadPage("indexRank.html");
 //Load new content as new page
 //mainView.router.load({pageName: 'about'});
@@ -72,18 +74,16 @@ $$(document).on('deviceready', function() {
     });
 
     if (AdMob) {
-
         AdMob.prepareRewardVideoAd({
             adId: admobid.rewardVideoAd,
-            autoShow: true,
+            autoShow: false,
             isTesting: true
         }, function() {
-            alert("ok");
+
         }, function() {
-            alert("fail");
+
         });
     } else {
-        alert("onAdPresentFail");
     }
 
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
@@ -100,52 +100,30 @@ $$(document).on('deviceready', function() {
     //navigator.vibrate([1000, 1000, 3000, 1000, 5000]);
 });
 
-document.addEventListener('onAdLoaded', function(e) {
-    alert("onAdLoaded");
-});
-
-document.addEventListener('onAdFailLoad', function(e) {
-    alert("onAdFailLoad");
-});
-
 document.addEventListener('onAdPresent', function(e) {
-    if (AdMob) {
-      AdMob.prepareRewardVideoAd({
-          adId: admobid.rewardVideoAd,
-          autoShow: true,
-          isTesting: true
-      }, function() {
-          alert("ok");
-      }, function() {
-          alert("fail");
-      });
-    } else {
-        alert("onAdPresentFail");
-    }
+    location.reload();
 });
 
 document.addEventListener('onAdDismiss', function(e) {
-  if (AdMob) {
-    alert("onAdDismissOK");
-    AdMob.prepareRewardVideoAd({
-        adId: admobid.rewardVideoAd,
-        autoShow: true,
-        isTesting: true
-    }, function() {
-        alert("ok");
-    }, function() {
-        alert("fail");
-    });
-  } else {
-      alert("onAdDismissFail");
-  }
+    location.reload();
 });
+
+/*
+document.addEventListener('onAdLoaded', function(e) {
+  //  alert("onAdLoaded");
+});
+
+document.addEventListener('onAdFailLoad', function(e) {
+  //  alert("onAdFailLoad");
+});
+
+
 
 document.addEventListener('onAdLeaveApp', function(e) {
-    alert("onAdLeaveApp");
+    //alert("onAdLeaveApp");
 });
 // Now we need to run the code that will be executed only for About page.
-
+*/
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
 myApp.onPageInit('about', function(page) {
     // Do something here for "about" page

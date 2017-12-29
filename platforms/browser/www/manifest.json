@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "Best Package",
-  "short_name": "Best Package",
-  "version": "com.skyexplorer.goodprice",
-  "description": "Best Package",
+  "name": "Fish Shrimp Crab",
+  "short_name": "Fish Shrimp Crab",
+  "version": "com.skyexplorer.fishshrimpcrab",
+  "description": "Fish Shrimp Crab",
   "author": "Sky Explorer",
   "icons": [
     {

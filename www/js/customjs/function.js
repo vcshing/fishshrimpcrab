@@ -7,35 +7,13 @@ function noMoneyAlert() {
       {
         text: '看廣告',
         onClick: function() {
-
           AdMob.showRewardVideoAd();
         }
       },
       {
         text: '取消',
         onClick: function() {
-          if (AdMob) {
-            alert("ok");
-              AdMob.prepareRewardVideoAd({
-                  adId: admobid.rewardVideoAd,
-                  autoShow: false,
-                  isTesting: true
-              }, function() {
-                  alert("ok");
-              }, function() {
-                  alert("fail");
-              });
-          } else {
-              alert("onAdPresentFail");
-          }
-        }
-      },
-      {
-        text: '取消2',
-        onClick: function() {
-          if (AdMob) {
-            AdMob.showRewardVideoAd();
-          }
+
         }
       }
     ]
@@ -112,7 +90,15 @@ function renderBidButtomEvent(element, order) {
         $(".onhandAmt").html(onhandAmt)
         $(".bet" + order + "Amt").html(betAmt)
     } else {
-        noMoneyAlert()
+      window.plugins.toast.show(
+          "你沒錢了,先按投注吧", 'short', 'top',
+          function(a) {
+              console.log('toast success: ' + a)
+          },
+          function(b) {
+              alert('toast error: ' + b)
+          }
+      )
     }
 
 }
