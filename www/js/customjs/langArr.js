@@ -17,7 +17,7 @@ appConfigArr={
   "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.skyexplorer.fishshrimpcrab",
   "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/2688306979",
   "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/2468815124",
-  "androidAdmobBonusID"	:"ca-app-pub-3715336230214756/9086194367"
+  "androidAdmobBonusID"	:"ca-app-pub-3715336230214756/1817012772"
 }
 
 imageSign.push("A")

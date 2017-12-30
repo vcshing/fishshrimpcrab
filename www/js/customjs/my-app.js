@@ -45,7 +45,6 @@ $$(document).on('deviceready', function() {
 
 
     // Set AdMobAds options:
-    
     if (/(android)/i.test(navigator.userAgent)) { // for android & amazon-fireos
         admobid = {
             banner: appConfigArr["androidAdmobBannerID"], // or DFP format "/6253334/dfp_example_ad"
@@ -73,12 +72,12 @@ $$(document).on('deviceready', function() {
         isTesting:true
     });
 
-    if (AdMob) AdMob.prepareRewardVideoAd({
+/*  if (AdMob) AdMob.prepareRewardVideoAd({
           adId: admobid.rewardVideoAd,
           autoShow: false,
           isTesting:true
     },function(e){console.log("prepareRewardVideoAdOK"+JSON.stringify(e));},function(e){console.log("prepareRewardVideoAdFail" + JSON.stringify(e));});
-
+*/
     if (AdMob) AdMob.prepareInterstitial({
           adId: admobid.interstitial,
           autoShow: false,
