@@ -312,14 +312,14 @@ function googleInAppGetProduct(callback){
   inAppPurchase
     .getProducts(['com.skyexplorer.fishshrimpcrab'])
     .then(function (products) {
-      console.log(products);
+      alert(JSON.stringify(products));
       /*
          [{ productId: 'com.yourapp.prod1', 'title': '...', description: '...', currency: '...', price: '...', priceAsDecimal: '...' }, ...]
       */
       callback(products)
     })
     .catch(function (err) {
-      console.log(err);
+      alert(JSON.stringify(err));
     });
 }
 
@@ -330,7 +330,7 @@ function googleInAppBuyProduct(callback){
   inAppPurchase
     .buy('com.skyexplorer.fishshrimpcrab')
     .then(function (data) {
-      console.log(data);
+      alert(JSON.stringify(data));
       /*
         {
           transactionId: ...
@@ -341,6 +341,6 @@ function googleInAppBuyProduct(callback){
         callback(data)
     })
     .catch(function (err) {
-      console.log(err);
+      alert(JSON.stringify(err));
     });
 }
