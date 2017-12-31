@@ -138,6 +138,20 @@ module.exports = [
         "clobbers": [
             "window.AdMob"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/src/browser/DeviceProxy.js",
+        "id": "cordova-plugin-device.DeviceProxy",
+        "pluginId": "cordova-plugin-device",
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -155,7 +169,8 @@ module.exports.metadata =
     "cordova-plugin-x-toast": "2.5.2",
     "phonegap-plugin-barcodescanner": "6.0.5",
     "cordova-plugin-extension": "1.5.3",
-    "cordova-plugin-admobpro": "2.29.29"
+    "cordova-plugin-admobpro": "2.29.29",
+    "cordova-plugin-device": "1.1.7"
 }
 // BOTTOM OF METADATA
 });

@@ -4,6 +4,7 @@ function mainPage() {
 }
 
 function pageInit() {
+    lang = getCookie("lang", "selectedLang", checkLang());
 
   /*  setLang();
       myApp.showPreloader();
@@ -16,6 +17,15 @@ function pageInit() {
     },2000)
     */
 }
+
+myApp.onPageInit('ranking', function(page) {
+    // Do something here for "about" page
+  //  addRecord(onhandAmt)
+  //  $(".recordName").bind("click",function(){
+  //  alert(2);
+
+  //  });
+})
 
 myApp.onPageInit('register', function(page) {
     // Do something here for "about" page

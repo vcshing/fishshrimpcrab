@@ -6,8 +6,17 @@ function noMoneyAlert() {
         buttons: [{
                 text: '看廣告',
                 onClick: function() {
-                  AdMob.showRewardVideoAd();
-                
+                    if (appArr.rewardVideoReady) {
+                        appArr.rewardVideoReady = false;
+                        AdMob.showRewardVideoAd();
+                    } else {
+                        myApp.alert("暫時沒有廣告,請稍後再來");
+                        if (AdMob) AdMob.prepareRewardVideoAd({
+                            adId: admobid.rewardVideoAd,
+                            autoShow: false,
+                            isTesting: appConfigArr["isTesting"]
+                        });
+                    }
                 }
             },
             {
@@ -64,6 +73,12 @@ function afterRewardVideo() {
     $(".onhandAmt").html(onhandAmt)
 }
 
+function afterCheckIn() {
+    setCookie("onhandAmt", onhandAmt + 10000)
+    onhandAmt = onhandAmt + 10000;
+    $(".onhandAmt").html(onhandAmt)
+}
+
 function sliceGameResult() {
     sliceResult = setInterval(
         function() {
@@ -91,15 +106,20 @@ function renderBidButtomEvent(element, order) {
         $(".onhandAmt").html(onhandAmt)
         $(".bet" + order + "Amt").html(betAmt)
     } else {
-        window.plugins.toast.show(
-            "你沒錢了,先按投注吧", 'short', 'center',
-            function(a) {
-                console.log('toast success: ' + a)
-            },
-            function(b) {
-                alert('toast error: ' + b)
-            }
-        )
+        try {
+            window.plugins.toast.show(
+                "你沒錢了,先按投注吧", 'short', 'center',
+                function(a) {
+                    console.log('toast success: ' + a)
+                },
+                function(b) {
+                    alert('toast error: ' + b)
+                }
+            )
+        } catch (e) {
+
+        }
+
     }
 
 }

@@ -148,6 +148,9 @@ function setCookieIndex(index, contentIndex, content) {
 
     storageManager.setCookie(index, cookieArray)
 }
+function clearAllCookie() {
+  storageManager.clear()
+}
 
 
 function frontEndTranslateToSelectedLang(defaultLangArr, callback) {
@@ -279,7 +282,7 @@ function saveImageAsJpg(name, address) {
 }
 
 function getDeviceID(){
-  if (typeof(device) == "undefined") {
+  if (typeof(device) == "undefined" || device.uuid == null) {
       var deviceID = getCookie("deviceid", 0, "");
       if(deviceID==""){
         deviceID = getRandomNumber();

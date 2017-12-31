@@ -10,6 +10,13 @@ $(".shareApp").bind("click", function(e) {
     window.plugins.socialsharing.share(appConfigArr["appName"], appConfigArr["appDescription"], "", appConfigArr["androidAppLink"]);
 })
 
+$('.navMenu').on('click', function () {
+      myApp.openPanel('left');
+});
+$('.menuBack').on('click', function () {
+     myApp.closePanel();
+});
+
 $(".langen").bind("click", function() {
     lang = "en";
     storageManager.setCookie("lang", {

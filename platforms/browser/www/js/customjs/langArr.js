@@ -1,6 +1,8 @@
 var lang
 var appConfigArr = []
+var appVarArr = []
 var defaultLangArr = []
+var admobid = {};
 var menuArr= []
 var menuSiteArr= []
 var loopLangArr = []
@@ -8,15 +10,20 @@ var imageSign = []
 var imagePath = []
 var onhandAmt
 var sliceResult;
-var CloneAdmob;
+
 appConfigArr={
   "appName" :	"Fish Shrimp Crab",
   "appDescription"	:	"Fish Shrimp Crab",
   "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.skyexplorer.fishshrimpcrab",
   "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/2688306979",
   "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/2468815124",
-  "androidAdmobBonusID"	:"ca-app-pub-3715336230214756/9086194367"
+  "androidAdmobBonusID"	:"ca-app-pub-3715336230214756/1817012772",
+  "isTesting" : true
 }
+appArr={
+  "rewardVideoReady": true,
+}
+
 
 imageSign.push("A")
 imageSign.push("B")
