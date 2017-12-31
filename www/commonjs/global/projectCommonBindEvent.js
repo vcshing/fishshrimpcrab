@@ -51,8 +51,7 @@ $(".langDefault").bind("click", function() {
 $(".rechargeMoney").bind("click", function() {
     googleInAppGetProduct(function(){
       googleInAppBuyProduct(function(){
-        
-      })
 
+      })
     })
 })
