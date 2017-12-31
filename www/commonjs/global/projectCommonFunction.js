@@ -328,7 +328,7 @@ function googleInAppBuyProduct(callback){
       callback = function() {};
   }
   inAppPurchase
-    .buy('com.yourapp.prod1')
+    .buy('com.skyexplorer.fishshrimpcrab')
     .then(function (data) {
       console.log(data);
       /*
