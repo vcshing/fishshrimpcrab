@@ -29,21 +29,51 @@ $(".betAmt1000").bind("click", function() {
 })
 
 $(".betA").bind("click", function() {
+  $(".bet" + "F" + "Image").removeClass("shake-constant")
+  $(".bet" + "B" + "Image").removeClass("shake-constant")
+  $(".bet" + "C" + "Image").removeClass("shake-constant")
+  $(".bet" + "D" + "Image").removeClass("shake-constant")
+  $(".bet" + "E" + "Image").removeClass("shake-constant")
     renderBidButtomEvent(this, "A");
 })
 $(".betB").bind("click", function() {
+  $(".bet" + "A" + "Image").removeClass("shake-constant")
+  $(".bet" + "F" + "Image").removeClass("shake-constant")
+  $(".bet" + "C" + "Image").removeClass("shake-constant")
+  $(".bet" + "D" + "Image").removeClass("shake-constant")
+  $(".bet" + "E" + "Image").removeClass("shake-constant")
     renderBidButtomEvent(this, "B");
 })
 $(".betC").bind("click", function() {
+  $(".bet" + "A" + "Image").removeClass("shake-constant")
+  $(".bet" + "B" + "Image").removeClass("shake-constant")
+  $(".bet" + "F" + "Image").removeClass("shake-constant")
+  $(".bet" + "D" + "Image").removeClass("shake-constant")
+  $(".bet" + "E" + "Image").removeClass("shake-constant")
     renderBidButtomEvent(this, "C");
 })
 $(".betD").bind("click", function() {
+  $(".bet" + "A" + "Image").removeClass("shake-constant")
+  $(".bet" + "B" + "Image").removeClass("shake-constant")
+  $(".bet" + "C" + "Image").removeClass("shake-constant")
+  $(".bet" + "F" + "Image").removeClass("shake-constant")
+  $(".bet" + "E" + "Image").removeClass("shake-constant")
     renderBidButtomEvent(this, "D");
 })
 $(".betE").bind("click", function() {
+  $(".bet" + "A" + "Image").removeClass("shake-constant")
+  $(".bet" + "B" + "Image").removeClass("shake-constant")
+  $(".bet" + "C" + "Image").removeClass("shake-constant")
+  $(".bet" + "D" + "Image").removeClass("shake-constant")
+  $(".bet" + "F" + "Image").removeClass("shake-constant")
     renderBidButtomEvent(this, "E");
 })
 $(".betF").bind("click", function() {
+  $(".bet" + "A" + "Image").removeClass("shake-constant")
+  $(".bet" + "B" + "Image").removeClass("shake-constant")
+  $(".bet" + "C" + "Image").removeClass("shake-constant")
+  $(".bet" + "D" + "Image").removeClass("shake-constant")
+  $(".bet" + "E" + "Image").removeClass("shake-constant")
     renderBidButtomEvent(this, "F");
 })
 
