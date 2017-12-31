@@ -170,7 +170,8 @@ module.exports.metadata =
     "phonegap-plugin-barcodescanner": "6.0.5",
     "cordova-plugin-extension": "1.5.3",
     "cordova-plugin-admobpro": "2.29.29",
-    "cordova-plugin-device": "1.1.7"
+    "cordova-plugin-device": "1.1.7",
+    "cordova-plugin-inapppurchase": "1.1.0"
 }
 // BOTTOM OF METADATA
 });

@@ -304,3 +304,43 @@ function showloading(){
 function hideloading(){
     myApp.hidePreloader();
 }
+
+function googleInAppGetProduct(callback){
+  if (typeof(callback) != "function") {
+      callback = function() {};
+  }
+  inAppPurchase
+    .getProducts(['com.skyexplorer.fishshrimpcrab'])
+    .then(function (products) {
+      console.log(products);
+      /*
+         [{ productId: 'com.yourapp.prod1', 'title': '...', description: '...', currency: '...', price: '...', priceAsDecimal: '...' }, ...]
+      */
+      callback(products)
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}
+
+function googleInAppBuyProduct(callback){
+  if (typeof(callback) != "function") {
+      callback = function() {};
+  }
+  inAppPurchase
+    .buy('com.yourapp.prod1')
+    .then(function (data) {
+      console.log(data);
+      /*
+        {
+          transactionId: ...
+          receipt: ...
+          signature: ...
+        }
+      */
+        callback(data)
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+}

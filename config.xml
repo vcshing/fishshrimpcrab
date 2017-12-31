@@ -59,4 +59,5 @@
     <plugin name="cordova-plugin-statusbar" spec="^2.4.0" />
     <plugin name="cordova-plugin-admobpro" spec="^2.29.29" />
     <plugin name="cordova-plugin-device" spec="^1.1.7" />
+    <plugin name="cordova-plugin-inapppurchase" spec="^1.2.0" />
 </widget>
