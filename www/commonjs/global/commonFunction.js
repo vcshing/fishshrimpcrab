@@ -125,7 +125,7 @@ function sliceGameResult() {
             $(".result2").attr("data-imageSign", imageSign[randNumber2])
             $(".result3").attr("src", imagePath[randNumber3])
             $(".result3").attr("data-imageSign", imageSign[randNumber3])
-        }, 30);
+        }, 60);
 }
 
 function renderBidButtomEvent(element, order) {
