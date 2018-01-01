@@ -324,7 +324,7 @@ function googleInAppGetProduct(callback) {
     */
   try {
     inAppPurchase
-        .getProducts(['160000coins'])
+        .getProducts(['80000coins'])
         .then(function(products) {
             //  alert(JSON.stringify(products));
             /*
@@ -353,7 +353,7 @@ function googleInAppBuyProduct(callback) {
     return;*/
     try {
       inAppPurchase
-          .buy('160000coins')
+          .buy('80000coins')
           .then(function(data) {
               //  alert(JSON.stringify(data));
               /*

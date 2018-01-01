@@ -62,7 +62,7 @@ $(".rechargeMoney").bind("click", function() {
         googleInAppBuyProduct(function(response) {
           if(response.transactionId != undefined &&
             response.transactionId != ""){
-            addMoney(160000);
+            addMoney(80000);
             myApp.alert("你已經成功充值!");
             ajaxSavePaymentRecord(response,function(){})
           }else{
