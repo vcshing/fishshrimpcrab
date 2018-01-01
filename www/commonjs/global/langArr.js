@@ -12,6 +12,8 @@ var onhandAmt = 0;
 var sliceResult;
 var addbetAmt = 50;
 var normalAdvAward = 0;
+var panelIsClose=true
+
 appConfigArr={
   "appName" :	"Fish Shrimp Crab",
   "appDescription"	:	"Fish Shrimp Crab",

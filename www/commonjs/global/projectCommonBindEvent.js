@@ -10,7 +10,7 @@ $(".shareApp").bind("click", function(e) {
     window.plugins.socialsharing.share(appConfigArr["appName"], appConfigArr["appDescription"], "", appConfigArr["androidAppLink"]);
 })
 
-var panelIsClose=true
+
 $('.navMenu').on('click', function() {
     if(panelIsClose){
       myApp.openPanel('left');
@@ -22,6 +22,7 @@ $('.navMenu').on('click', function() {
 });
 $('.menuBack').on('click', function() {
     myApp.closePanel();
+    panelIsClose =true
 });
 
 $('.indexpage').on('click', function() {
@@ -29,6 +30,7 @@ $('.indexpage').on('click', function() {
         "pageName": "index"
     });
     myApp.closePanel();
+    panelIsClose =true
 });
 
 $(".langen").bind("click", function() {
