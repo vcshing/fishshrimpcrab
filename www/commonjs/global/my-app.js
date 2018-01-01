@@ -99,18 +99,22 @@ $$(document).on('deviceready', function() {
 });
 
 document.addEventListener('onAdPresent', function(e) {
-    afterRewardVideo()
+    if (typeof(normalAdvAward) != "undefined" && normalAdvAward > 0) {
+        addMoney(normalAdvAward)
+    } else {
+        afterRewardVideo()
+    }
     //  location.reload();
 
-        if (AdMob) AdMob.prepareRewardVideoAd({
-            adId: admobid.rewardVideoAd,
-            autoShow: false,
-            isTesting: appConfigArr["isTesting"]
-        }, function(e) {
-            console.log("prepareRewardVideoAdOK" + JSON.stringify(e));
-        }, function(e) {
-            console.log("prepareRewardVideoAdFail" + JSON.stringify(e));
-        });
+    if (AdMob) AdMob.prepareRewardVideoAd({
+        adId: admobid.rewardVideoAd,
+        autoShow: false,
+        isTesting: appConfigArr["isTesting"]
+    }, function(e) {
+        console.log("prepareRewardVideoAdOK" + JSON.stringify(e));
+    }, function(e) {
+        console.log("prepareRewardVideoAdFail" + JSON.stringify(e));
+    });
 
 
 });
@@ -118,15 +122,15 @@ document.addEventListener('onAdPresent', function(e) {
 document.addEventListener('onAdDismiss', function(e) {
     //  location.reload();
 
-        if (AdMob) AdMob.prepareRewardVideoAd({
-            adId: admobid.rewardVideoAd,
-            autoShow: false,
-            isTesting: appConfigArr["isTesting"]
-        }, function(e) {
-            console.log("prepareRewardVideoAdOK" + JSON.stringify(e));
-        }, function(e) {
-            console.log("prepareRewardVideoAdFail" + JSON.stringify(e));
-        });
+    if (AdMob) AdMob.prepareRewardVideoAd({
+        adId: admobid.rewardVideoAd,
+        autoShow: false,
+        isTesting: appConfigArr["isTesting"]
+    }, function(e) {
+        console.log("prepareRewardVideoAdOK" + JSON.stringify(e));
+    }, function(e) {
+        console.log("prepareRewardVideoAdFail" + JSON.stringify(e));
+    });
 
 });
 

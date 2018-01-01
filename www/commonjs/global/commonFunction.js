@@ -6,6 +6,7 @@ function noMoneyAlert() {
                 text: '看廣告',
                 onClick: function() {
                     if (appArr.rewardVideoReady) {
+                        normalAdvAward = 30000;
                         appArr.rewardVideoReady = false;
                         AdMob.showRewardVideoAd();
                     } else {
@@ -26,9 +27,37 @@ function noMoneyAlert() {
             }
         ]
     })
+}
 
+function betMissingAlert() {
+    myApp.modal({
+        title: '你沒有選擇投注項目!',
+        text: '看廣告可獲得$10000元',
+        buttons: [{
+                text: '看廣告',
+                onClick: function() {
+                    if (appArr.rewardVideoReady) {
+                        appArr.rewardVideoReady = false;
+                        normalAdvAward = 10000;
+                        AdMob.showRewardVideoAd();
+                    } else {
+                        myApp.alert("暫時沒有廣告,請稍後再來");
+                        if (AdMob) AdMob.prepareRewardVideoAd({
+                            adId: admobid.rewardVideoAd,
+                            autoShow: false,
+                            isTesting: appConfigArr["isTesting"]
+                        });
+                    }
+                }
+            },
+            {
+                text: '取消',
+                onClick: function() {
 
-
+                }
+            }
+        ]
+    })
 }
 
 function winAlert(money) {
