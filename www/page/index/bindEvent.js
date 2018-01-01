@@ -120,7 +120,7 @@ $(".betSubmit").bind("click", function() {
                 default:
             }
             if (tempwinAmt > 0) {
-                winAmt += betAAmt
+                winAmt += tempwinAmt
             } else {
                 winAmt -= betAAmt
             }
@@ -149,7 +149,7 @@ $(".betSubmit").bind("click", function() {
                 default:
             }
             if (tempwinAmt > 0) {
-                winAmt += betBAmt
+                winAmt += tempwinAmt
             } else {
                 winAmt -= betBAmt
             }
@@ -178,7 +178,7 @@ $(".betSubmit").bind("click", function() {
                 default:
             }
             if (tempwinAmt > 0) {
-                winAmt += betCAmt
+                winAmt += tempwinAmt
             } else {
                 winAmt -= betCAmt
             }
@@ -207,7 +207,7 @@ $(".betSubmit").bind("click", function() {
                 default:
             }
             if (tempwinAmt > 0) {
-                winAmt += betDAmt
+                winAmt += tempwinAmt
             } else {
                 winAmt -= betDAmt
             }
@@ -236,7 +236,7 @@ $(".betSubmit").bind("click", function() {
                 default:
             }
             if (tempwinAmt > 0) {
-                winAmt += betEAmt
+                winAmt += tempwinAmt
             } else {
                 winAmt -= betEAmt
             }
@@ -265,7 +265,7 @@ $(".betSubmit").bind("click", function() {
                 default:
             }
             if (tempwinAmt > 0) {
-                winAmt += betFAmt
+                winAmt += tempwinAmt
             } else {
                 winAmt -= betFAmt
             }
