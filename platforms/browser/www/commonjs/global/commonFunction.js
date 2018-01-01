@@ -102,8 +102,12 @@ function renderBidButtomEvent(element, order) {
         betAmt += addbetAmt;
         onhandAmt -= addbetAmt
         $(".bet" + order + "AmtSign").html("$")
+
+        $(".bet" + order + "Image").addClass("shake-constant")
+
         $(".onhandAmt").html(onhandAmt)
         $(".bet" + order + "Amt").html(betAmt)
+
     } else {
         try {
             window.plugins.toast.show(

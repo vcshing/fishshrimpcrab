@@ -10,16 +10,18 @@ $(".shareApp").bind("click", function(e) {
     window.plugins.socialsharing.share(appConfigArr["appName"], appConfigArr["appDescription"], "", appConfigArr["androidAppLink"]);
 })
 
-$('.navMenu').on('click', function () {
-      myApp.openPanel('left');
+$('.navMenu').on('click', function() {
+    myApp.openPanel('left');
 });
-$('.menuBack').on('click', function () {
-     myApp.closePanel();
+$('.menuBack').on('click', function() {
+    myApp.closePanel();
 });
 
-$('.indexpage').on('click', function () {
-     mainView.router.load({"pageName":"index"});
-     myApp.closePanel();
+$('.indexpage').on('click', function() {
+    mainView.router.load({
+        "pageName": "index"
+    });
+    myApp.closePanel();
 });
 
 $(".langen").bind("click", function() {
@@ -49,9 +51,16 @@ $(".langDefault").bind("click", function() {
 
 
 $(".rechargeMoney").bind("click", function() {
-    googleInAppGetProduct(function(){
-      googleInAppBuyProduct(function(){
-
-      })
+    googleInAppGetProduct(function(response) {
+        googleInAppBuyProduct(function(response) {
+          if(response.transactionId != undefined &&
+            response.transactionId != ""){
+            addMoney(160000);
+            myApp.alert("你已經成功充值!");
+            ajaxSavePaymentRecord(response,function(){})
+          }else{
+            myApp.alert("Cancalled");
+          }
+        })
     })
 })

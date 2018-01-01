@@ -14,9 +14,9 @@ Url = {
     }
 };
 
-function openElementUrl(element,target){
-  var options = "location=yes";
-  window.open($(element).html(), target, options);
+function openElementUrl(element, target) {
+    var options = "location=yes";
+    window.open($(element).html(), target, options);
 }
 
 function toCode(TempStrWord, BIGtoGB) {
@@ -110,9 +110,9 @@ function setLang() {
 function getCookie(index, contentIndex, defaultValue) {
     var contentIndex = String(contentIndex);
     try {
-      var cookie = storageManager.getCookie(index);
+        var cookie = storageManager.getCookie(index);
     } catch (err) {
-      return defaultValue;
+        return defaultValue;
     }
     if (cookie == "" || cookie == null) {
         return defaultValue;
@@ -148,8 +148,9 @@ function setCookieIndex(index, contentIndex, content) {
 
     storageManager.setCookie(index, cookieArray)
 }
+
 function clearAllCookie() {
-  storageManager.clear()
+    storageManager.clear()
 }
 
 
@@ -281,66 +282,94 @@ function saveImageAsJpg(name, address) {
     document.body.removeChild(link);
 }
 
-function getDeviceID(){
-  if (typeof(device) == "undefined" || device.uuid == null) {
-      var deviceID = getCookie("deviceid", 0, "");
-      if(deviceID==""){
-        deviceID = getRandomNumber();
-      }
-      setCookieIndex("deviceid", 0, deviceID);
-      return deviceID;
-  } else {
-      return device.uuid;
-  }
+function getDeviceID() {
+    if (typeof(device) == "undefined" || device.uuid == null) {
+        var deviceID = getCookie("deviceid", 0, "");
+        if (deviceID == "") {
+            deviceID = getRandomNumber();
+        }
+        setCookieIndex("deviceid", 0, deviceID);
+        return deviceID;
+    } else {
+        return device.uuid;
+    }
 }
+
 function getRandomNumber() {
-  return String(new Date().valueOf()) + String(Math.floor(Math.random() * 1001));
+    return String(new Date().valueOf()) + String(Math.floor(Math.random() * 1001));
 }
 
-function showloading(){
-  myApp.showPreloader();
+function showloading() {
+    myApp.showPreloader();
 }
 
-function hideloading(){
+function hideloading() {
     myApp.hidePreloader();
 }
 
-function googleInAppGetProduct(callback){
-  if (typeof(callback) != "function") {
-      callback = function() {};
+function googleInAppGetProduct(callback) {
+    if (typeof(callback) != "function") {
+        callback = function() {};
+    }
+/*
+    callback([{
+        productId: 'com.yourapp.prod1',
+        'title': '...',
+        description: '...',
+        currency: '...',
+        price: '...',
+        priceAsDecimal: '...'
+    }]);
+    return;
+    */
+  try {
+    inAppPurchase
+        .getProducts(['160000coins'])
+        .then(function(products) {
+            //  alert(JSON.stringify(products));
+            /*
+               [{ productId: 'com.yourapp.prod1', 'title': '...', description: '...', currency: '...', price: '...', priceAsDecimal: '...' }, ...]
+            */
+            callback(products)
+        })
+        .catch(function(err) {
+            console.log(err);
+        });
+  } catch (e) {
+    myApp.alert("Error" + JSON.stringify(e))
   }
-  inAppPurchase
-    .getProducts(['com.skyexplorer.fishshrimpcrab'])
-    .then(function (products) {
-      alert(JSON.stringify(products));
-      /*
-         [{ productId: 'com.yourapp.prod1', 'title': '...', description: '...', currency: '...', price: '...', priceAsDecimal: '...' }, ...]
-      */
-      callback(products)
-    })
-    .catch(function (err) {
-      alert(JSON.stringify(err));
-    });
 }
 
-function googleInAppBuyProduct(callback){
-  if (typeof(callback) != "function") {
-      callback = function() {};
-  }
-  inAppPurchase
-    .buy('com.skyexplorer.fishshrimpcrab')
-    .then(function (data) {
-      alert(JSON.stringify(data));
-      /*
-        {
-          transactionId: ...
-          receipt: ...
-          signature: ...
-        }
-      */
-        callback(data)
+function googleInAppBuyProduct(callback) {
+    if (typeof(callback) != "function") {
+        callback = function() {};
+    }
+    /*
+    callback({
+        'transactionId': '...',
+        'receipt': '...',
+        'signature': '...'
     })
-    .catch(function (err) {
-      alert(JSON.stringify(err));
-    });
+    return;*/
+    try {
+      inAppPurchase
+          .buy('160000coins')
+          .then(function(data) {
+              //  alert(JSON.stringify(data));
+              /*
+                {
+                  transactionId: ...
+                  receipt: ...
+                  signature: ...
+                }
+              */
+              callback(data)
+          })
+          .catch(function(err) {
+              console.log(err);
+          });
+    } catch (e) {
+      myApp.alert("Error" + JSON.stringify(e))
+    }
+
 }

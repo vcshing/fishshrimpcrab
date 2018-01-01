@@ -46,3 +46,12 @@ $(".langDefault").bind("click", function() {
     });
     pageInit();
 })
+
+
+$(".rechargeMoney").bind("click", function() {
+    googleInAppGetProduct(function(){
+      googleInAppBuyProduct(function(){
+
+      })
+    })
+})

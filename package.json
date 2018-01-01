@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "animate.css": "^3.5.2",
-    "cordova-browser": "^5.0.2",
+    "cordova-browser": "^5.0.3",
     "cordova-plugin-admobpro": "^2.29.29",
     "cordova-plugin-console": "^1.1.0",
     "cordova-plugin-device": "^1.1.7",

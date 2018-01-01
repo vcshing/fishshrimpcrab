@@ -72,6 +72,12 @@ function afterRewardVideo() {
     $(".onhandAmt").html(onhandAmt)
 }
 
+function addMoney(amount) {
+    setCookie("onhandAmt", onhandAmt + amount)
+    onhandAmt = onhandAmt + amount;
+    $(".onhandAmt").html(onhandAmt)
+}
+
 function afterCheckIn() {
     setCookie("onhandAmt", onhandAmt + 10000)
     onhandAmt = onhandAmt + 10000;

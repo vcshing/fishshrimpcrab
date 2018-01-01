@@ -14,10 +14,10 @@ function updateRecord(mark, callback) {
         },
         dataType: "json",
         success: function(response) {
-
+          callback();
         },
         error: function(response) {
-
+          callback();
         }
     });
 }
