@@ -116,9 +116,9 @@ function afterCheckIn() {
 function sliceGameResult() {
     sliceResult = setInterval(
         function() {
-            var randNumber = Math.floor((Math.random() * 5));
-            var randNumber2 = Math.floor((Math.random() * 5));
-            var randNumber3 = Math.floor((Math.random() * 5));
+            var randNumber = Math.floor((Math.random() * 6));
+            var randNumber2 = Math.floor((Math.random() * 6));
+            var randNumber3 = Math.floor((Math.random() * 6));
             $(".result1").attr("src", imagePath[randNumber])
             $(".result1").attr("data-imageSign", imageSign[randNumber])
             $(".result2").attr("src", imagePath[randNumber2])
