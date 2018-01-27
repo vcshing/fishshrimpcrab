@@ -17,13 +17,15 @@ $(".dailyCheckin").bind("click", function() {
                     var month = date.getMonth();
 
                     if (getCookie("checkIn", "date", 0) != month.toString() + day.toString()) {
-                        setCookie("checkIn", {
+                        setCookieIndex("checkIn", {
                             "date": month.toString() + day.toString()
                         })
-                        setCookieIndex("checkIn", "continueCheckIn", parseInt(getCookie("checkIn", "continueCheckIn", 0)) + 1)
+                        var oldcheckIn = parseInt(getCookie("checkIn", "continueCheckIn", 0))
+
+                        setCookieIndex("checkIn", "continueCheckIn", (oldcheckIn + 1))
                         afterCheckIn();
-                        myApp.alert("你一共簽到了" + getCookie("checkIn", "continueCheckIn", 1) + " 次!!恭起發財");
-                    } else {
+                        myApp.alert("你一共簽到了" + getCookie("checkIn", "continueCheckIn", 11) + " 次!!恭起發財");
+                   } else {
                         myApp.alert("你今天已經簽到了!!");
                     }
 
