@@ -17,10 +17,8 @@ $(".dailyCheckin").bind("click", function() {
                     var month = date.getMonth();
 
                     if (getCookie("checkIn", "date", 0) != month.toString() + day.toString()) {
-                        setCookieIndex("checkIn", {
-                            "date": month.toString() + day.toString()
-                        })
-                        var oldcheckIn = parseInt(getCookie("checkIn", "continueCheckIn", 0))
+                        setCookieIndex("checkIn", "date",month.toString() + day.toString());
+                        var oldcheckIn = parseInt(getCookie("checkIn", "continueCheckIn", 0));
 
                         setCookieIndex("checkIn", "continueCheckIn", (oldcheckIn + 1))
                         afterCheckIn();
