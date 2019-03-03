@@ -19,7 +19,7 @@
     <platform name="android">
 
         <config-file mode="merge" parent="/manifest" platform="android">
-            <preference name="play_store_key" value="MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsDS017zQjW934Q0CHSfEdjopzjOAyqFXfNXiCuTB7PmEfDVm+AIVpgGb3lwZBiZFCUFibU5t3LR8u77hGqnwtCkdVJSYgJCSb/h6EDS8c0h08oazBJyyUcGmC6ILTr7kFY2v5yDinaac6ZSwuMm3oYCWdRKm/NId2OO33vPMsV3KGm+HR609SLw/inxMYqaDpLE3wx2dBVu+sjhbd2CEKpBsOdXeVzCpv6SVp2FzAKPaMm+34e4JndvN9dKDSgrPHH6mS6P448ZHDXA84UbRcC0FiotKg0cBrqdFTrHfHNNalgN5QLy/q2/JscalR8sOOCb8QqZICz3+//rMOQlszwIDAQAB" />
+            <preference name="play_store_key" value="" />
         </config-file>
         <allow-intent href="market:*" />
         <icon density="ldpi" src="www/res/icon/android/ldpi.png" />
