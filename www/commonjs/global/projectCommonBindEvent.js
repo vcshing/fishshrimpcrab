@@ -2,7 +2,7 @@ $(".otherApp").bind("click", function(e) {
     e.preventDefault();
     var target = "_system";
     var options = "location=yes";
-    var url = "https://play.google.com/store/apps/developer?id=Sky+Explorer";
+    var url = "https://play.google.com/store/apps/developer?id=Bug+Birl";
     window.open(url, target, options);
 })
 
@@ -58,7 +58,7 @@ $(".langDefault").bind("click", function() {
     pageInit();
 })
 
-
+$(".rechargeMoney").hide();
 $(".rechargeMoney").bind("click", function() {
     googleInAppGetProduct(function(response) {
         googleInAppBuyProduct(function(response) {

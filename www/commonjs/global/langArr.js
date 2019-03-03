@@ -17,10 +17,10 @@ var panelIsClose=true
 appConfigArr={
   "appName" :	"Fish Shrimp Crab",
   "appDescription"	:	"Fish Shrimp Crab",
-  "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.skyexplorer.fishshrimpcrab",
-  "androidAdmobBannerID"	:"ca-app-pub-3715336230214756/2688306979",
-  "androidAdmobInterstitialID"	:"ca-app-pub-3715336230214756/2468815124",
-  "androidAdmobBonusID"	:"ca-app-pub-3715336230214756/1817012772",
+  "androidAppLink"	:"https://play.google.com/store/apps/details?id=com.buggetbirl.fishshrimpcrab",
+  "androidAdmobBannerID"	:"ca-app-pub-5387430380370897/2197466273",
+  "androidAdmobInterstitialID"	:"ca-app-pub-5387430380370897/3235215771",
+  "androidAdmobBonusID"	:"ca-app-pub-5387430380370897/4248914541",
   "isTesting" : false
 }
 appArr={
